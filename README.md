@@ -6,9 +6,14 @@ Inclou continguts de SQL, Power BI i Python.
 
 ## 🗂️ Estructura del Repositori
 
-De moment, només s’ha incorporat el material corresponent a l’Sprint 2:
+Actualment s’ha incorporat el material corresponent als següents sprints:
+*Sprint 2*     
     ```
     /SQL/Sprint2_NocionsBàsiquesSQL/
+    ```
+*Sprint 3*     
+    ```
+    /SQL/Sprint3_GestioTaulesIndexVistes/
     ```
 
 

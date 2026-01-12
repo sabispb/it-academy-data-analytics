@@ -8,26 +8,20 @@ Recorda mostrar el diagrama i realitzar una breu descripció d'aquest.
 */
 
 USE transactions;
-
+-- DROP DATABASE transactions;
 -- DROP TABLE credit_card;
 
 CREATE TABLE credit_card (
-id VARCHAR(10) NOT NULL, -- char?
-iban VARCHAR(50),
-pan INT,
-pin INT,
-cvv SMALLINT,
-expiring_date DATE,
+id VARCHAR(200) NOT NULL, -- char?
+iban VARCHAR(200),
+pan VARCHAR(200),
+pin VARCHAR(200),
+cvv VARCHAR(200),
+expiring_date VARCHAR(200),
 PRIMARY KEY (id)
 );
 
-ALTER TABLE credit_card
-MODIFY COLUMN pan VARCHAR(50);
-
-ALTER TABLE credit_card
-MODIFY COLUMN expiring_date VARCHAR(50);
-
--- INSERT INTO VALUES from doc
+-- INSERT INTO VALUES from doc 'datos_introducir_sprint3_user'
 
 ALTER TABLE credit_card ADD COLUMN new_date DATE;
 SET SQL_SAFE_UPDATES = 0;
@@ -38,11 +32,11 @@ SET SQL_SAFE_UPDATES = 1;
 ALTER TABLE credit_card DROP COLUMN expiring_date;
 ALTER TABLE credit_card RENAME COLUMN new_date TO expiring_date;
 
-CREATE INDEX idx_credit_card_id
-ON transaction (credit_card_id); -- it was not needed since when creating the foreign key then it will be created 
+-- CREATE INDEX idx_credit_card_id
+-- ON transaction (credit_card_id); -- not needed since when creating the foreign key then it will be created 
 
-ALTER TABLE transaction
-DROP FOREIGN KEY fk_credit_card_id;
+-- ALTER TABLE transaction
+-- DROP FOREIGN KEY fk_credit_card_id;
 
 ALTER TABLE transaction
 ADD CONSTRAINT fk_credit_card_id
@@ -68,7 +62,7 @@ En la taula "transaction" ingressa una nova transacció amb la següent informac
 
 Id	108B1D1D-5B23-A76C-55EF-C568E49A99DD
 credit_card_id	CcU-9999
-company_id	CcU-9999
+company_id		b-9999
 user_id	9999
 lat	829.999
 longitude	-117.999
@@ -82,11 +76,11 @@ VALUES
 
 INSERT INTO company (id)
 VALUES
-('CcU-9999');
+('b-9999');
 
 INSERT INTO transaction (id, credit_card_id, company_id, user_id, lat, longitude, amount, declined)
 VALUES
-('108B1D1D-5B23-A76C-55EF-C568E49A99DD', 'CcU-9999', 'CcU-9999', '9999', '829.999', '-117.999', 111.11, 0);
+('108B1D1D-5B23-A76C-55EF-C568E49A99DD', 'CcU-9999', 'b-9999', '9999', '829.999', '-117.999', 111.11, 0);
 
 SELECT *
 FROM transaction
@@ -197,16 +191,27 @@ LIMIT 1;
 
 
 -- 6. De la taula credit_card, modificar tipus de dades i afegir columna fecha_actual
-ALTER TABLE credit_card MODIFY COLUMN id VARCHAR(20);
-ALTER TABLE credit_card MODIFY COLUMN pin VARCHAR(4);
-ALTER TABLE credit_card MODIFY COLUMN cvv INT;
-ALTER TABLE credit_card MODIFY COLUMN expiring_date VARCHAR(20);
+-- Primer he d'eliminar la fk_credit_card_id per a canviar el tipus d'id perquè sinó dóna error.
 
-ALTER TABLE credit_card ADD COLUMN fecha_actual DATE;
+ALTER TABLE transaction
+DROP CONSTRAINT fk_credit_card_id;
+
+ALTER TABLE credit_card
+	MODIFY COLUMN id VARCHAR(20),
+	MODIFY COLUMN pin VARCHAR(4),
+	MODIFY COLUMN cvv INT,
+	MODIFY COLUMN expiring_date VARCHAR(20),
+    MODIFY COLUMN iban VARCHAR(50),
+	ADD COLUMN fecha_actual DATE;
 
 SELECT *
 FROM credit_card
 LIMIT 1;
+
+ALTER TABLE transaction
+ADD CONSTRAINT fk_credit_card_id
+FOREIGN KEY (credit_card_id) REFERENCES credit_card(id)
+ON UPDATE CASCADE; 
 
 -- 7. De la taula ‘transaction’ modificar el nombre de caràcters disponibles a la columna credit_card_id.
 ALTER TABLE transaction MODIFY COLUMN credit_card_id VARCHAR(20);

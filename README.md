@@ -16,6 +16,10 @@ Actualment s’ha incorporat el material corresponent als següents sprints:
 
     /SQL/Sprint3_GestioTaulesIndexVistes/
 
+*Sprint 4*
+
+    /SQL/Sprint4_ManipulacioTaules/
+
 
 
 ## 👩‍🚀 Autoria

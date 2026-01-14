@@ -9,8 +9,11 @@ Exercici 2
 Mostra la mitjana d'amount per IBAN de les targetes de crèdit a la companyia Donec Ltd, utilitza almenys 2 taules.
 */
 
--- DROP DATABASE transactions2;
-CREATE DATABASE s4_transactions;
+-- DROP DATABASE s4_transactions;
+CREATE DATABASE IF NOT EXISTS s4_transactions; -- AÑADIDO 'IF NOT EXISTS' P2P
+
+SHOW DATABASES; -- AÑADIDO P2P
+
 USE s4_transactions;
 
 /*
@@ -37,8 +40,7 @@ company_id,company_name,phone,email,country,website
 products
 id,product_name,price,colour,weight,warehouse_id
 */
-
-CREATE TABLE american_users (
+CREATE TABLE IF NOT EXISTS american_users ( -- AÑADIDO 'IF NOT EXISTS' P2P
 	id VARCHAR (200),
     name VARCHAR (200),
     surname VARCHAR (200),
@@ -51,7 +53,7 @@ CREATE TABLE american_users (
     address VARCHAR (200)
     );
     
-CREATE TABLE european_users (
+CREATE TABLE IF NOT EXISTS european_users ( -- AÑADIDO 'IF NOT EXISTS' P2P
 	id VARCHAR (200),
     name VARCHAR (200),
     surname VARCHAR (200),
@@ -64,7 +66,7 @@ CREATE TABLE european_users (
     address VARCHAR (200)
     );
 
-CREATE TABLE credit_cards (
+CREATE TABLE IF NOT EXISTS credit_cards ( -- AÑADIDO 'IF NOT EXISTS' P2P
 	id VARCHAR (200),
     user_id VARCHAR (200),
     iban VARCHAR (200),
@@ -76,7 +78,7 @@ CREATE TABLE credit_cards (
     expiring_date VARCHAR (200)
     );
     
-    CREATE TABLE transactions (
+    CREATE TABLE IF NOT EXISTS transactions ( -- AÑADIDO 'IF NOT EXISTS' P2P
 	id VARCHAR (200),
     card_id VARCHAR (200),
     business_id VARCHAR (200),
@@ -89,7 +91,7 @@ CREATE TABLE credit_cards (
     longitude VARCHAR (200)
     );
     
-    CREATE TABLE companies (
+    CREATE TABLE IF NOT EXISTS companies ( -- AÑADIDO 'IF NOT EXISTS' P2P
 	company_id VARCHAR (200),
     company_name VARCHAR (200),
     phone VARCHAR (200),
@@ -98,7 +100,7 @@ CREATE TABLE credit_cards (
     website VARCHAR (200)
     );
     
-    CREATE TABLE products (
+    CREATE TABLE IF NOT EXISTS products ( -- AÑADIDO 'IF NOT EXISTS' P2P
 	id VARCHAR (200),
     product_name VARCHAR (200),
     price VARCHAR (200),
@@ -202,11 +204,11 @@ LIMIT 2;
 -- JOIN Users table, check they are ok and remove the previous ones.
 
 CREATE TABLE all_users AS
-SELECT *, 'america' AS region
-FROM american_users
-UNION
-SELECT *, 'europe' AS region
-FROM european_users;
+	SELECT *, 'america' AS region
+	FROM american_users
+	UNION
+	SELECT *, 'europe' AS region
+	FROM european_users;
 
 -- DROP TABLE all_users;
 
@@ -229,20 +231,33 @@ FROM transactions
 LIMIT 2;
 
 
--- Add Primary and foreign keys
-ALTER TABLE transactions
-MODIFY COLUMN id VARCHAR(100) NOT NULL,
-ADD CONSTRAINT pk_transactions_id
-PRIMARY KEY (id);
+-- Add Primary and foreign keys, could've been in the same query!
 
 ALTER TABLE all_users
 MODIFY COLUMN id VARCHAR(100) NOT NULL,
 ADD CONSTRAINT pk_users_id
 PRIMARY KEY (id);
 
+ALTER TABLE companies
+MODIFY COLUMN company_id VARCHAR(10) NOT NULL,
+ADD CONSTRAINT pk_company_id
+PRIMARY KEY (company_id);
+
+ALTER TABLE credit_cards
+MODIFY COLUMN id VARCHAR(10) NOT NULL,
+ADD CONSTRAINT pk_credit_cards_id
+PRIMARY KEY (id);
+
 ALTER TABLE transactions
+MODIFY COLUMN id VARCHAR(100) NOT NULL,
+ADD CONSTRAINT pk_transactions_id
+PRIMARY KEY (id),
 ADD CONSTRAINT fk_transactions_users_id
-FOREIGN KEY (user_id) REFERENCES all_users(id);
+FOREIGN KEY (user_id) REFERENCES all_users(id),
+ADD CONSTRAINT fk_transactions_business_id
+FOREIGN KEY (business_id) REFERENCES companies(company_id),
+ADD CONSTRAINT fk_transactions_credit_cards_id
+FOREIGN KEY (card_id) REFERENCES credit_cards(id);
 
 SELECT *
 FROM transactions;
@@ -254,35 +269,17 @@ SELECT *
 FROM credit_cards;
 
 
-ALTER TABLE companies
-MODIFY COLUMN company_id VARCHAR(10) NOT NULL,
-ADD CONSTRAINT pk_company_id
-PRIMARY KEY (company_id);
-
-ALTER TABLE transactions
-ADD CONSTRAINT fk_transactions_business_id
-FOREIGN KEY (business_id) REFERENCES companies(company_id);
-
-ALTER TABLE credit_cards
-MODIFY COLUMN id VARCHAR(10) NOT NULL,
-ADD CONSTRAINT pk_credit_cards_id
-PRIMARY KEY (id);
-
-ALTER TABLE transactions
-ADD CONSTRAINT fk_transactions_credit_cards_id
-FOREIGN KEY (card_id) REFERENCES credit_cards(id);
-
 /*Exercici 1
 Realitza una subconsulta que mostri tots els usuaris amb més de 80 transaccions utilitzant almenys 2 taules.*/
 
 SELECT *
 FROM all_users
 WHERE EXISTS (
-SELECT user_id, COUNT(id) AS number_transactions
-FROM transactions
-WHERE all_users.id = transactions.user_id
-GROUP BY user_id
-HAVING number_transactions > 80);
+	SELECT user_id, COUNT(id) AS number_transactions
+	FROM transactions
+	WHERE all_users.id = transactions.user_id
+	GROUP BY user_id
+	HAVING number_transactions > 80);
 
 /* Sense subconsulta, amb JOIN
 SELECT u.id, u.name, u.surname, COUNT(t.id) AS number_transactions
@@ -296,12 +293,13 @@ HAVING number_transactions > 80;
 /*Exercici 2
 Mostra la mitjana d'amount per IBAN de les targetes de crèdit a la companyia Donec Ltd, utilitza almenys 2 taules.*/
 
-SELECT iban, ROUND(AVG(amount),2) AS average_amount
+SELECT cc.iban, ROUND(AVG(amount),2) AS average_amount
 FROM transactions t
 JOIN companies c ON t.business_id = c.company_id
 JOIN credit_cards cc ON t.card_id = cc.id
-WHERE company_name LIKE '%Donec%'
+WHERE c.company_name LIKE '%Donec Ltd%' -- Cambio P2P de nombre de compañía, tenía Donec solo y había más
 GROUP BY cc.iban;
+
 
 
 /*Nivell 2
@@ -320,10 +318,14 @@ FROM transactions
 ORDER BY card_id, timestamp;
 
 ALTER TABLE transactions
-MODIFY COLUMN timestamp TIMESTAMP;
+MODIFY COLUMN timestamp TIMESTAMP; -- if I merge it with the following one it happens an error...
 
 ALTER TABLE transactions
 RENAME COLUMN timestamp to transaction_date;
+
+SELECT *
+FROM transactions;
+
 
 -- Create table with WITH statements: https://www.baeldung.com/sql/with-clause-table-creation
 -- DROP TABLE active_credit_cards;
@@ -348,7 +350,7 @@ CREATE TABLE active_credit_cards AS
 SELECT *
 FROM active_credit_cards;
 
-SELECT COUNT(card_id) AS active_cards
+SELECT state, COUNT(card_id) AS active_cards -- Añadido el state en el P2P
 FROM active_credit_cards
 WHERE state = 'active';
 
@@ -420,15 +422,31 @@ CREATE TABLE transaction_product AS
 	  jt.product_id
 	FROM transactions t
 	CROSS JOIN JSON_TABLE(
+	  CONCAT('[',t.product_ids,']'), -- changed from REPLACE in P2P
+	  '$[*]' COLUMNS (
+		product_id INT PATH '$'
+	  )
+	) jt;
+
+
+/*
+CREATE TABLE transaction_product AS
+	SELECT
+	  t.id AS transaction_id,
+	  jt.product_id
+	FROM transactions t
+	CROSS JOIN JSON_TABLE(
 	  CONCAT(
 		'["',
-		REPLACE(t.product_ids, ',', '","'),
+		REPLACE(t.product_ids, ',', '","'), -- REPLACE? cambiar por CONCAT(`[',t.product_ids,']')
 		'"]'
 	  ),
 	  '$[*]' COLUMNS (
 		product_id INT PATH '$'
 	  )
 	) jt;
+    */
+    
     
 SELECT *
 FROM transaction_product;

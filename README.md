@@ -2,7 +2,7 @@
 
 Aquest repositori recull els exercicis realitzats al llarg dels diferents *sprints* del bootcamp de **Data Analytics** de l’[IT Academy](https://www.barcelonactiva.cat/itacademy) per al curs 2025-2026.
 
-Inclou continguts de SQL, Power BI i Python.
+Inclou continguts de SQL, MongoDB, Power BI i Python.
 
 ## 🗂️ Estructura del Repositori
 
@@ -20,6 +20,10 @@ Actualment s’ha incorporat el material corresponent als següents sprints:
 
     /SQL/Sprint4_ManipulacioTaules/
 
+
+*Sprint 5*
+
+    /MongoDB/Sprint5_ConsultesMongoDB/
 
 
 ## 👩‍🚀 Autoria

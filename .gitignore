@@ -2,5 +2,7 @@
 SQL/data
 SQL/correccions
 
+MongoDB/data
+
 #macOS
 **/.DS_Store

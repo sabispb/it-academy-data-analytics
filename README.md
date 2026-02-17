@@ -25,6 +25,10 @@ Actualment s’ha incorporat el material corresponent als següents sprints:
 
     /MongoDB/Sprint5_ConsultesMongoDB/
 
+*Sprint 7*  
+
+    /PowerBI/Sprint7_IntroduccióIndicadors/
+
 
 ## 👩‍🚀 Autoria
 

@@ -5,4 +5,7 @@ SQL/correccions
 MongoDB/data
 
 #macOS
-**/.DS_Store
+.DS_Store
+
+# env
+it-academy-venv/

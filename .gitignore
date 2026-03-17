@@ -1,7 +1,8 @@
 #folders
 SQL/data
 SQL/correccions
-Python/Sprint 09_Creacio FuncionsEstructuresDadesBucles/data/*
+Python/Sprint09_CreacioFuncionsEstructuresDadesBucles/data/*
+!Python/Sprint09_CreacioFuncionsEstructuresDadesBucles/data/.gitkeep
 
 MongoDB/data/*
 

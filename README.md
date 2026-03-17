@@ -29,6 +29,32 @@ Actualment s’ha incorporat el material corresponent als següents sprints:
 
     /PowerBI/Sprint7_IntroduccióIndicadors/
 
+*Sprint 8*  
+
+    /PowerBI/Sprint8_IntroduccióIndicadors/
+
+*Sprint 9*  
+
+    /Python/Sprint09_CreacioFuncionsEstructuresDadesBucles/
+
+
+### Setup per a Python 🐍
+
+#### 1. Creació d'un entorn virtual
+```
+python3 -m venv it-academy-venv
+```
+
+#### 2. Activació d'entorn virtual
+```
+source it-academy-venv/bin/activate
+```
+
+#### 3. Instal·lar dependències
+```
+pip install -r requirements.txt
+```
+
 
 ## 👩‍🚀 Autoria
 

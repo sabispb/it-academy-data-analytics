@@ -1,8 +1,9 @@
 #folders
 SQL/data
 SQL/correccions
+Python/Sprint 09_Creacio FuncionsEstructuresDadesBucles/data/*
 
-MongoDB/data
+MongoDB/data/*
 
 #macOS
 .DS_Store

@@ -1,8 +1,5 @@
 #folders
-SQL/data
-SQL/correccions
-
-MongoDB/data/*
+correccions/*
 
 #macOS
 .DS_Store

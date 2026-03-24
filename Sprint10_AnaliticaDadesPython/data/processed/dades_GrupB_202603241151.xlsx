@@ -1,4 +1,4 @@
-nom,cognoms,nom_complet,país_origen,ciutat,dia,mes,any,gènere,salari_mensual,fills,no_fills,grup_professional,origen_espanya,Fills,salari_mensual_int,data_naixement,edat_actual,increment
+nom,cognoms,nom_complet,país_origen,ciutat,dia,mes,any,gènere,salari_mensual,fills_bool,no_fills_bool,grup_professional,origen_espanya,fills,salari_mensual_int,data_naixement,edat_actual,increment
 Laura,Schneider Fischer,Laura Schneider Fischer,Alemanya,Berlín,2,2,1958,Dona,1.769 €,1.0,,Grup B,False,Sí,1830.92,1958-02-02,68,3.5
 Lea,Schneider Schneider,Lea Schneider Schneider,Alemanya,Berlín,23,10,2005,Dona,2.013 €,,1.0,Grup B,False,No,2083.46,2005-10-23,20,3.5
 Mia,Fischer,Mia Fischer,Alemanya,Berlín,11,8,1950,Dona,1.557 €,1.0,,Grup B,False,Sí,1611.5,1950-08-11,75,3.5

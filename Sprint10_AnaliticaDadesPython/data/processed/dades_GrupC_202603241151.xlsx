@@ -1,4 +1,4 @@
-nom,cognoms,nom_complet,país_origen,ciutat,dia,mes,any,gènere,salari_mensual,fills,no_fills,grup_professional,origen_espanya,Fills,salari_mensual_int,data_naixement,edat_actual,increment
+nom,cognoms,nom_complet,país_origen,ciutat,dia,mes,any,gènere,salari_mensual,fills_bool,no_fills_bool,grup_professional,origen_espanya,fills,salari_mensual_int,data_naixement,edat_actual,increment
 Anna,Müller,Anna Müller,Alemanya,Hamburg,1,1,1987,Dona,2.464 €,,1.0,Grup C,False,No,2513.28,1987-01-01,39,2.0
 Laura,Schmidt Müller,Laura Schmidt Müller,Alemanya,Hamburg,15,6,1987,,2.035 €,1.0,,Grup C,False,Sí,2075.7,1987-06-15,38,2.0
 Anna,Fischer,Anna Fischer,Alemanya,Hamburg,14,5,1985,Dona,2.443 €,1.0,,Grup C,False,Sí,2491.86,1985-05-14,40,2.0

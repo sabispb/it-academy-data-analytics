@@ -1,4 +1,4 @@
-nom,cognoms,nom_complet,país_origen,ciutat,dia,mes,any,gènere,salari_mensual,fills,no_fills,grup_professional,origen_espanya,Fills,salari_mensual_int,data_naixement,edat_actual,increment
+nom,cognoms,nom_complet,país_origen,ciutat,dia,mes,any,gènere,salari_mensual,fills_bool,no_fills_bool,grup_professional,origen_espanya,fills,salari_mensual_int,data_naixement,edat_actual,increment
 Jonas,Schneider,Jonas Schneider,Alemanya,Berlín,22,11,1985,Home,2.754 €,1.0,,Grup D,False,Sí,2974.32,1985-11-22,40,8.0
 Leon,Schneider Schneider,Leon Schneider Schneider,Alemanya,Hamburg,16,10,1977,Home,2.984 €,,1.0,Grup D,False,No,3222.72,1977-10-16,48,8.0
 Lea,Schneider,Lea Schneider,Alemanya,Munic,22,9,1950,Dona,2.668 €,1.0,,Grup D,False,Sí,2881.44,1950-09-22,75,8.0
@@ -39,7 +39,7 @@ Toni,López,Toni López,Espanya,Sevilla,10,3,1989,Home,2.882 €,,1.0,Grup D,Tru
 Anna,Sánchez Castells,Anna Sánchez Castells,Espanya,Sevilla,1,2,1960,Dona,2.630 €,,1.0,Grup D,True,No,2840.4,1960-02-01,66,8.0
 Arnau,Sánchez García,Arnau Sánchez García,Espanya,València,24,2,1978,Home,3.283 €,,1.0,Grup D,True,No,3545.64,1978-02-24,48,8.0
 Arnau,Castells Sánchez,Arnau Castells Sánchez,Espanya,València,17,4,1998,Home,2.791 €,,1.0,Grup D,True,No,3014.28,1998-04-17,27,8.0
-Arnau,Ferrer,Arnau Ferrer,Espanya,València,24,3,1990,Altres,2.605 €,1.0,,Grup D,True,Sí,2813.4,1990-03-24,35,8.0
+Arnau,Ferrer,Arnau Ferrer,Espanya,València,24,3,1990,Altres,2.605 €,1.0,,Grup D,True,Sí,2813.4,1990-03-24,36,8.0
 Joan,Martínez Sánchez,Joan Martínez Sánchez,Espanya,València,18,2,1986,Home,3.318 €,1.0,,Grup D,True,Sí,3583.44,1986-02-18,40,8.0
 Carla,Sánchez,Carla Sánchez,Espanya,València,6,3,1957,Dona,2.951 €,1.0,,Grup D,True,Sí,3187.08,1957-03-06,69,8.0
 Clara,López,Clara López,Espanya,València,17,2,1951,Dona,2.917 €,1.0,,Grup D,True,Sí,3150.36,1951-02-17,75,8.0

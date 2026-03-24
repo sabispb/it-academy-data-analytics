@@ -1,4 +1,4 @@
-nom,cognoms,nom_complet,país_origen,ciutat,dia,mes,any,gènere,salari_mensual,fills,no_fills,grup_professional,origen_espanya,Fills,salari_mensual_int,data_naixement,edat_actual,increment
+nom,cognoms,nom_complet,país_origen,ciutat,dia,mes,any,gènere,salari_mensual,fills_bool,no_fills_bool,grup_professional,origen_espanya,fills,salari_mensual_int,data_naixement,edat_actual,increment
 Mia,Schneider Fischer,Mia Schneider Fischer,Alemanya,Berlín,22,10,1976,Altres,951 €,,1.0,Grup A,False,No,998.55,1976-10-22,49,5.0
 Lea,Fischer,Lea Fischer,Alemanya,Berlín,9,9,1986,Dona,1.370 €,1.0,,Grup A,False,Sí,1438.5,1986-09-09,39,5.0
 Lea,Müller,Lea Müller,Alemanya,Hamburg,14,4,2003,Dona,1.314 €,,1.0,Grup A,False,No,1379.7,2003-04-14,22,5.0
@@ -315,7 +315,7 @@ Oriol,Castells,Oriol Castells,Espanya,Sevilla,27,3,1998,Home,1.564 €,1.0,,Grup
 Marta,Sánchez,Marta Sánchez,Espanya,Sevilla,17,3,1999,Dona,1.389 €,,1.0,Grup A,True,No,1458.45,1999-03-17,27,5.0
 Oriol,Martínez,Oriol Martínez,Espanya,Sevilla,22,7,1977,Home,1.348 €,1.0,,Grup A,True,Sí,1415.4,1977-07-22,48,5.0
 Eva,López Castells,Eva López Castells,Espanya,Sevilla,4,12,2004,,874 €,1.0,,Grup A,True,Sí,917.7,2004-12-04,21,5.0
-Marc,Castells,Marc Castells,Espanya,Sevilla,24,3,1974,Home,1.008 €,,1.0,Grup A,True,No,1058.4,1974-03-24,51,5.0
+Marc,Castells,Marc Castells,Espanya,Sevilla,24,3,1974,Home,1.008 €,,1.0,Grup A,True,No,1058.4,1974-03-24,52,5.0
 Anna,Sánchez,Anna Sánchez,Espanya,Sevilla,17,7,1971,Dona,767 €,1.0,,Grup A,True,Sí,805.35,1971-07-17,54,5.0
 Clara,Ferrer Castells,Clara Ferrer Castells,Espanya,Sevilla,25,7,1998,Dona,1.393 €,,1.0,Grup A,True,No,1462.65,1998-07-25,27,5.0
 Pau,Ferrer,Pau Ferrer,Espanya,Sevilla,6,3,1997,Home,1.428 €,,1.0,Grup A,True,No,1499.4,1997-03-06,29,5.0
@@ -469,7 +469,7 @@ João,Silva,João Silva,Portugal,Lisboa,2,7,1994,Home,1.634 €,,1.0,Grup A,Fals
 Tiago,Ferreira Pereira,Tiago Ferreira Pereira,Portugal,Lisboa,15,3,1959,Altres,1.263 €,,1.0,Grup A,False,No,1326.15,1959-03-15,67,5.0
 Inês,Oliveira Ferreira,Inês Oliveira Ferreira,Portugal,Lisboa,2,5,1970,Dona,687 €,,1.0,Grup A,False,No,721.35,1970-05-02,55,5.0
 Tiago,Ferreira,Tiago Ferreira,Portugal,Porto,22,11,1993,Home,1.246 €,1.0,,Grup A,False,Sí,1308.3,1993-11-22,32,5.0
-Tiago,Silva Pereira,Tiago Silva Pereira,Portugal,Porto,24,3,1980,Home,1.431 €,,1.0,Grup A,False,No,1502.55,1980-03-24,45,5.0
+Tiago,Silva Pereira,Tiago Silva Pereira,Portugal,Porto,24,3,1980,Home,1.431 €,,1.0,Grup A,False,No,1502.55,1980-03-24,46,5.0
 Tiago,Oliveira,Tiago Oliveira,Portugal,Porto,22,3,1989,Home,1.354 €,1.0,,Grup A,False,Sí,1421.7,1989-03-22,37,5.0
 Miguel,Ferreira,Miguel Ferreira,Portugal,Porto,19,2,1990,Home,1.202 €,,1.0,Grup A,False,No,1262.1,1990-02-19,36,5.0
 Inês,Silva Oliveira,Inês Silva Oliveira,Portugal,Porto,11,2,1986,Dona,953 €,,1.0,Grup A,False,No,1000.65,1986-02-11,40,5.0
@@ -482,7 +482,7 @@ William,Brown Smith,William Brown Smith,Regne Unit,Londres,17,7,1959,Home,1.147 
 Sophie,Jones,Sophie Jones,Regne Unit,Londres,26,1,1963,Dona,684 €,,1.0,Grup A,False,No,718.2,1963-01-26,63,5.0
 William,Brown,William Brown,Regne Unit,Londres,24,2,1991,Home,997 €,1.0,,Grup A,False,Sí,1046.85,1991-02-24,35,5.0
 Olivia,Taylor,Olivia Taylor,Regne Unit,Londres,13,9,1992,,1.416 €,1.0,,Grup A,False,Sí,1486.8,1992-09-13,33,5.0
-Emily,Taylor,Emily Taylor,Regne Unit,Londres,24,3,1976,Dona,1.250 €,1.0,,Grup A,False,Sí,1312.5,1976-03-24,49,5.0
+Emily,Taylor,Emily Taylor,Regne Unit,Londres,24,3,1976,Dona,1.250 €,1.0,,Grup A,False,Sí,1312.5,1976-03-24,50,5.0
 Isla,Taylor Smith,Isla Taylor Smith,Regne Unit,Londres,7,5,1965,Dona,1.237 €,,1.0,Grup A,False,No,1298.85,1965-05-07,60,5.0
 William,Taylor,William Taylor,Regne Unit,Londres,11,10,1957,Home,1.017 €,,1.0,Grup A,False,No,1067.85,1957-10-11,68,5.0
 George,Brown Jones,George Brown Jones,Regne Unit,Manchester,27,12,1979,Home,1.130 €,1.0,,Grup A,False,Sí,1186.5,1979-12-27,46,5.0

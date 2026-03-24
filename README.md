@@ -1,56 +1,59 @@
-# Bootcamp Data Analytics — Repositori d’Sprints
+# Bootcamp Data Analytics — Repositori d'Sprints
 
-Aquest repositori recull els exercicis realitzats al llarg dels diferents *sprints* del bootcamp de **Data Analytics** de l’[IT Academy](https://www.barcelonactiva.cat/itacademy) per al curs 2025-2026.
+Aquest repositori recull els exercicis realitzats al llarg dels diferents *sprints* del bootcamp de **Data Analytics** de l'[IT Academy](https://www.barcelonactiva.cat/itacademy) per al curs 2025-2026.
 
 Inclou continguts de SQL, MongoDB, Power BI i Python.
 
 ## 🗂️ Estructura del Repositori
 
-Actualment s’ha incorporat el material corresponent als següents sprints:
+Actualment s'ha incorporat el material corresponent als següents sprints:
 
-*Sprint 2*  
+*Sprint 2 - Nocions Bàsiques SQL*  
 
-    /SQL/Sprint2_NocionsBàsiquesSQL/
+    Sprint02_NocionsBasiquesSQL/
 
-*Sprint 3*
+*Sprint 3 - Gestió de Taules, Índex i Vistes*
 
-    /SQL/Sprint3_GestioTaulesIndexVistes/
+    Sprint03_GestioTaulesIndexVistes/
 
-*Sprint 4*
+*Sprint 4 - Manipulació de Taules*
 
-    /SQL/Sprint4_ManipulacioTaules/
+    Sprint04_ManipulacioTaules/
+
+*Sprint 5 - Consultes MongoDB*
+
+    Sprint05_ConsultesMongoDB/
+
+*Sprint 7 - Introducció a Indicadors*  
+
+    Sprint07_IntroduccioIndicadors/
+
+*Sprint 8 - Anàlisi de Vendes*  
+
+    Sprint08_AnalisiVendes/
+
+*Sprint 9 - Creació de Funcions, Estructures de Dades i Bucles*  
+
+    Sprint09_CreacioFuncionsEstructuresDadesBucles/
+
+*Sprint 10 - Analítica de Dades Python*  
+
+    Sprint10_AnaliticaDadesPython/
 
 
-*Sprint 5*
+## Setup per a Python 🐍
 
-    /MongoDB/Sprint5_ConsultesMongoDB/
-
-*Sprint 7*  
-
-    /PowerBI/Sprint7_IntroduccióIndicadors/
-
-*Sprint 8*  
-
-    /PowerBI/Sprint8_IntroduccióIndicadors/
-
-*Sprint 9*  
-
-    /Python/Sprint09_CreacioFuncionsEstructuresDadesBucles/
-
-
-### Setup per a Python 🐍
-
-#### 1. Creació d'un entorn virtual
+### 1. Creació d'un entorn virtual
 ```
 python3 -m venv it-academy-venv
 ```
 
-#### 2. Activació d'entorn virtual
+### 2. Activació d'entorn virtual
 ```
 source it-academy-venv/bin/activate
 ```
 
-#### 3. Instal·lar dependències
+### 3. Instal·lar dependències
 ```
 pip install -r requirements.txt
 ```
@@ -61,4 +64,3 @@ pip install -r requirements.txt
 | Nom           | Email                 | GitHub |
 |----------------|-----------------------|--------|
 | Sabina Planas Bonell | sabinaplanas@gmail.com | @sabispb
-

@@ -4,5 +4,8 @@ correccions/*
 #macOS
 .DS_Store
 
-# env
+# venv
 it-academy-venv/
+
+# env
+.env

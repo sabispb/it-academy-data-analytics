@@ -8,5 +8,5 @@ Aquest directori recull el material del *Sprint 11* del bootcamp de **Data Analy
   - Notebook Jupyter amb l'anàlisi de dades i exemples de visualització.
 - `MySQLConnector.ipynb`
   - Notebook de proves i experiments per a la connexió MySQL.
-- `Python_PowerBI.pbix`
+- `S11_PlanasBonell_Sabina.pbix`
   - Fitxer de Power BI amb visualitzacions creades a partir de les dades analitzades.

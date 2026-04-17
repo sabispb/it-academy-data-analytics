@@ -40,6 +40,10 @@ Actualment s'ha incorporat el material corresponent als següents sprints:
 
     Sprint10_AnaliticaDadesPython/
 
+*Sprint 11 - Visualització de Dades*  
+
+    Sprint11_VisualitzacioDades/
+
 
 ## Setup per a Python 🐍
 

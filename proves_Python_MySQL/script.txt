@@ -1,0 +1,72 @@
+-- =========================================
+-- CREACIÓN BASE DE DATOS
+-- =========================================
+CREATE DATABASE bootcamp_exam;
+USE bootcamp_exam;
+
+-- =========================================
+-- TABLA USERS
+-- =========================================
+CREATE TABLE users (
+id INT PRIMARY KEY,
+name VARCHAR(50),
+age INT,
+country VARCHAR(50)
+);
+
+INSERT INTO users VALUES
+(1, 'Anna', 25, 'Spain'),
+(2, 'Marc', 32, 'France'),
+(3, 'Laura', 45, 'Spain'),
+(4, 'John', 28, 'USA'),
+(5, 'Sofia', 35, 'Italy'),
+(6, 'Carlos', 22, 'Spain'),
+(7, 'Emma', 41, 'Germany'),
+(8, 'Lucas', 30, 'France');
+
+-- =========================================
+-- TABLA PRODUCTS
+-- =========================================
+CREATE TABLE products (
+id INT PRIMARY KEY,
+product_name VARCHAR(50),
+price FLOAT,
+category VARCHAR(50)
+);
+
+INSERT INTO products VALUES
+(1, 'Laptop', 900, 'Electronics'),
+(2, 'Phone', 600, 'Electronics'),
+(3, 'Tablet', 300, 'Electronics'),
+(4, 'Chair', 120, 'Furniture'),
+(5, 'Desk', 250, 'Furniture'),
+(6, 'Headphones', 80, 'Electronics');
+
+-- =========================================
+-- TABLA ORDERS
+-- =========================================
+CREATE TABLE orders (
+id INT PRIMARY KEY,
+user_id INT,
+product_id INT,
+quantity INT,
+order_date DATE,
+FOREIGN KEY (user_id) REFERENCES users(id),
+FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
+INSERT INTO orders VALUES
+(1, 1, 1, 1, '2024-01-10'),
+(2, 2, 2, 2, '2024-01-12'),
+(3, 3, 3, 1, '2024-01-15'),
+(4, 4, 4, 4, '2024-01-18'),
+(5, 5, 5, 1, '2024-01-20'),
+(6, 6, 6, 3, '2024-01-22'),
+(7, 1, 2, 1, '2024-01-25'),
+(8, 2, 3, 2, '2024-01-28'),
+(9, 3, 1, 1, '2024-02-01'),
+(10, 4, 5, 1, '2024-02-05');
+
+-- =========================================
+-- FIN
+-- =========================================

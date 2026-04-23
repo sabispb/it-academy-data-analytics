@@ -44,6 +44,10 @@ Actualment s'ha incorporat el material corresponent als següents sprints:
 
     Sprint11_VisualitzacioDades/
 
+*Sprint 12 - Consum de dades des d'una API REST*  
+
+    Sprint12_ConsumDades_API_REST/
+
 
 ## Setup per a Python 🐍
 
@@ -57,7 +61,15 @@ python3 -m venv it-academy-venv
 source it-academy-venv/bin/activate
 ```
 
-### 3. Instal·lar dependències
+### 3. Instal·lar dependències// ...existing code...
+*Sprint 11 - Visualització de Dades*  
+
+    Sprint11_VisualitzacioDades/
+
+*Sprint 12 - Consum de dades des d'una API REST*  
+
+    Sprint12_ConsumDades_API_REST/
+// ...existing code...
 ```
 pip install -r requirements.txt
 ```

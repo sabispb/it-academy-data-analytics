@@ -61,7 +61,7 @@ python3 -m venv it-academy-venv
 source it-academy-venv/bin/activate
 ```
 
-### 3. Instal·lar dependències// ...existing code...
+### 3. Instal·lar dependències
 *Sprint 11 - Visualització de Dades*  
 
     Sprint11_VisualitzacioDades/
